@@ -9,6 +9,7 @@ const CarouselComponent = () => {
     <>
       <Carousel
         autoPlay={true}
+        showArrows={false}
         infiniteLoop={true}
         showIndicators={false}
         showThumbs={false}
