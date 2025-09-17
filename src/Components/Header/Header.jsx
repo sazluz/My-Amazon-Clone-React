@@ -6,6 +6,7 @@ import { FaSearch } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { BiCart } from "react-icons/bi";
 import LowerHeader from "./LowerHeader";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -14,9 +15,9 @@ const Header = () => {
         <section className={classes.header_container}>
           <div className={classes.logo_container}>
             {/* Logo */}
-            <a href="/">
+            <Link to="/">
               <img src={logo} alt="Amazon-logo" />
-            </a>
+            </Link>
             <div className={classes.delivery}>
               {/* Delivery */}
               <span>
@@ -40,32 +41,32 @@ const Header = () => {
           </div>
           {/* Other Section */}
           <div className={classes.order_container}>
-            <a href="#" className={classes.language}>
+            <Link to="" className={classes.language}>
               <img src={usaFlag} width="40px" />
               <select name="" id="">
                 <option value="">EN</option>
               </select>
-            </a>
+            </Link>
             {/* Sign in */}
-            <a href="#">
+            <Link to="/auth">
               <div>
                 <p>Hello, sign in</p>
                 <span>Account & Lists</span>
               </div>
-            </a>
+            </Link>
             {/* Orders */}
-            <a href="#">
+            <Link to="/orders">
               <div>
                 <p>returns</p>
                 <span>& Orders</span>
               </div>
-            </a>
+            </Link>
             {/* Cart */}
-            <a href="" className={classes.cart}>
+            <Link to="/cart" className={classes.cart}>
               {/* Icon */}
               <BiCart size={35} />
               <span>0</span>
-            </a>
+            </Link>
           </div>
         </section>
       </header>
