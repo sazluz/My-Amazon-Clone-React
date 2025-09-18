@@ -35,7 +35,13 @@ const Results = () => {
             <hr />
             <div className={classes.products_container}>
               {result?.map((product) => {
-                return <ProductCard key={product.id} product={product} />;
+                return (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    addCart={true}
+                  />
+                );
               })}
             </div>
           </section>
