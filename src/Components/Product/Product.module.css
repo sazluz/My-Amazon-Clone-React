@@ -61,3 +61,33 @@
   align-items: center;
   padding: 10px 0;
 }
+
+.product_flexed {
+  box-shadow: none;
+  height: 50vh;
+  display: flex;
+  gap: 50px;
+  width: 90%;
+}
+
+.product_flexed h3 {
+  padding: 20px 0;
+}
+
+.product_flexed .button {
+  display: block;
+  position: static;
+  width: 150px;
+}
+
+.product_flexed img {
+  width: 300px !important;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .product_flexed {
+    gap: 20px;
+    flex-direction: column;
+  }
+}

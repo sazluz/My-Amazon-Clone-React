@@ -4,23 +4,28 @@ import { Rating } from "@mui/material";
 import CurrencyFormat from "../CurrencyFormat/CurrencyFormat";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, flex, renDes }) => {
   const {
     image = "",
     title = "Product Title",
     id = "",
-    rating = { rate: 0, count: 0 }, // Default rating object
+    rating = { rate: 0, count: 0 },
     price = 0,
     description = "",
   } = product || {};
 
   return (
-    <div className={classes.card_container}>
+    <div
+      className={`${classes.card_container} ${
+        flex ? classes.product_flexed : ""
+      }`}
+    >
       <Link to={`/products/${id}`}>
         {image && <img src={image} alt={title || "Product image"} />}
       </Link>
       <div>
         <h3>{title}</h3>
+        {renDes ? <p style={{ maxWidth: "750px" }}>{description}</p> : ""}
         <div className={classes.rating}>
           {/* Use rating.rate instead of rating */}
           <Rating value={rating?.rate || 0} precision={0.1} readOnly />
