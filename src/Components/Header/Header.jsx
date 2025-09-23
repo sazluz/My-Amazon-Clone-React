@@ -8,9 +8,10 @@ import { BiCart } from "react-icons/bi";
 import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
+import { auth } from "../../Utility/firebase";
 
 const Header = () => {
-  const [{ basket }, dispatch] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   return (
     <section className={classes.fixed}>
       <header>
@@ -39,7 +40,7 @@ const Header = () => {
             </select>
             <input type="text" name="" id="" placeholder="Search Amazon" />
             {/* Icon */}
-            <FaSearch className={classes.search__icon} size={28} />
+            <FaSearch className={classes.search__icon} size={41} />
           </div>
           {/* Other Section */}
           <div className={classes.order_container}>
@@ -50,10 +51,27 @@ const Header = () => {
               </select>
             </Link>
             {/* Sign in */}
-            <Link to="/auth">
+            <Link to={!user && "/auth"}>
               <div>
-                <p>Hello, sign in</p>
-                <span>Account & Lists</span>
+                <div>
+                  {user ? (
+                    <>
+                      <p>Hello {user?.email?.split("@")[0]}</p>
+                      <span
+                        onClick={() => {
+                          auth.signOut();
+                        }}
+                      >
+                        Sign Out
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <p>Hello, sign in</p>
+                      <span>Account & Lists</span>
+                    </>
+                  )}
+                </div>
               </div>
             </Link>
             {/* Orders */}

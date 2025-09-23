@@ -117,7 +117,7 @@
 }
 
 .order_container span {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -129,7 +129,7 @@
   position: absolute;
   font-weight: bold;
   top: 0px;
-  font-size: 20px;
+  font-size: 18px;
   background-color: #1a1a1a;
   left: 16px;
   color: orange;
@@ -139,7 +139,7 @@
 .delivery:hover,
 .logo_container img:hover {
   border: 1px solid white;
-  border-radius: 3px;
+  border-radius: 0px;
 }
 
 /* Lower Container Style  */
@@ -155,7 +155,7 @@
   list-style: none;
   gap: 12px;
   align-items: center;
-  height: 25px;
+  height: 45px;
 }
 
 .lower_container ul li:first-child {
